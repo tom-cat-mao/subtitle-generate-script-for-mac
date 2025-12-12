@@ -1,5 +1,7 @@
 # Subtitle-Generate-Script-for-Mac
 
+[中文文档](README_CN.md)
+
 An ultra-fast, automated subtitle generation tool optimized for Apple Silicon chips.
 
 This tool leverages **FFmpeg** for audio extraction and **Lightning-Whisper-MLX** for high-performance speech recognition. By utilizing the Apple MLX framework and 4-bit quantization, it achieves state-of-the-art inference speeds on macOS devices while maintaining high accuracy.
