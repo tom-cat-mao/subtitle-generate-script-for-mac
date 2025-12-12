@@ -1,15 +1,12 @@
 # Subtitle-Generate-Script-for-Mac
 
-
-# Auto Subtitle Generator for macOS (MLX)
-
 An ultra-fast, automated subtitle generation tool optimized for Apple Silicon chips.
 
 This tool leverages **FFmpeg** for audio extraction and **Lightning-Whisper-MLX** for high-performance speech recognition. By utilizing the Apple MLX framework and 4-bit quantization, it achieves state-of-the-art inference speeds on macOS devices while maintaining high accuracy.
 
 ## 🚀 Features
 
-*   **Apple Silicon Optimized**: Built on top of Apple's MLX framework to fully utilize the NPU and GPU on M-series chips.
+*   **Apple Silicon Optimized**: Built on top of Apple's MLX framework to fully utilize the GPU on M-series chips.
 *   **Multi-Format Support**: Generates **SRT**, **ASS** (Advanced Substation Alpha), **VTT** (WebVTT), and **TXT** files.
 *   **Smart Quantization**: Supports **4-bit** and **8-bit** quantization for faster inference and lower memory usage with minimal accuracy loss.
 *   **Automated Workflow**: Automatically extracts audio from video files (MP4, MKV, MOV, etc.), processes it, generates subtitles, and cleans up temporary files.
@@ -33,8 +30,8 @@ This tool leverages **FFmpeg** for audio extraction and **Lightning-Whisper-MLX*
 ### 1. Clone this Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/tom-cat-mao/subtitle-generate-script-for-mac.git sgs
+cd sgs
 ```
 
 ### 2. Install Dependencies
@@ -85,7 +82,7 @@ python auto_subtitle.py "lecture.mp4" --model large-v3 --quant 4bit --batch_size
 | Argument | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | `video_path` | **Required** | - | Path to the input video or audio file. |
-| `--model` | Optional | `medium` | The Whisper model size to use.<br>Options: `tiny`, `small`, `base`, `medium`, `large-v2`, `distil-large-v2`, `large-v3`, `distil-medium.en`. |
+| `--model` | Optional | `medium` | The Whisper model size to use.<br>Options: `tiny`, `small`, `distil-small.en`, `base`, `medium`, `distil-medium.en`, `large`, `large-v2`, `distil-large-v2`, `large-v3`, `distil-large-v3` |
 | `--quant` | Optional | `None` | **Quantization mode.**<br>• `4bit`: Fastest, low memory (Recommended).<br>• `8bit`: Balanced.<br>• `None`: Full precision (FP16/FP32). |
 | `--format` | Optional | `srt` | Output format(s).<br>Options: `srt`, `ass`, `vtt`, `txt`, `all`.<br>Multiple formats can be comma-separated (e.g., `srt,ass`). |
 | `--batch_size` | Optional | `12` | Batch size for inference. Reduce this if you encounter memory errors. |
